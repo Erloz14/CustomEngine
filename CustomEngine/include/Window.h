@@ -1,32 +1,33 @@
 #pragma once
 #include "Prerequisites.h"
 
-class 
-Window{
+// Clase Window
+// Esta clase encapsula la funcionalidad relacionada con la creación y gestión de una ventana de aplicación.
+class Window {
 public:
-	Window();
-	~Window();
+    // Constructor y destructor de la ventana.
+    Window();
+    ~Window();
 
-	HRESULT
-		init(HINSTANCE hInstance, int nCmdShow, WNDPROC wndproc);
+    // Inicializa la ventana de la aplicación.
+    HRESULT init(HINSTANCE hInstance, int nCmdShow, WNDPROC wndproc);
 
-	void
-	update();
+    // Actualiza la ventana de la aplicación.
+    void update();
 
-	void 
-	render();
+    // Renderiza contenido en la ventana de la aplicación.
+    void render();
 
-	void 
-    destroy();
+    // Destruye la ventana de la aplicación.
+    void destroy();
+
 public:
-	HWND m_hWnd = nullptr;
-	unsigned int m_width;
-	unsigned int m_height;
+    HWND m_hWnd = nullptr; // Puntero a la ventana de la aplicación
+    unsigned int m_width; // Ancho de la ventana
+    unsigned int m_height; // Altura de la ventana
 
 private:
-	HINSTANCE m_hInst = nullptr;
-	RECT m_rect;
-	std::string m_windowNamw = "Custom Engine";
-
+    HINSTANCE m_hInst = nullptr; // Instancia de la aplicación
+    RECT m_rect; // Rectángulo que define las dimensiones de la ventana
+    std::string m_windowNamw = "Custom Engine"; // Nombre de la ventana de la aplicación
 };
-
