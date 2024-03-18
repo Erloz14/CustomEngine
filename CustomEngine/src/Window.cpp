@@ -1,5 +1,4 @@
 #include "Window.h" // Incluye el archivo de encabezado de la clase Window
-
 Window::Window() {
     // Constructor de la clase Window
 }
@@ -7,11 +6,9 @@ Window::Window() {
 Window::~Window() {
     // Destructor de la clase Window
 }
-
 HRESULT Window::init(HINSTANCE hInstance, int nCmdShow, WNDPROC wndproc) {
     // Inicializa la ventana
     m_hInst = hInstance;
-
     // Configuración de la estructura WNDCLASSEX para registrar la clase de ventana
     WNDCLASSEX wcex;
     wcex.cbSize = sizeof(WNDCLASSEX);
@@ -26,11 +23,9 @@ HRESULT Window::init(HINSTANCE hInstance, int nCmdShow, WNDPROC wndproc) {
     wcex.lpszMenuName = nullptr;
     wcex.lpszClassName = "TutorialWindowClass"; // Nombre de la clase de ventana
     wcex.hIconSm = LoadIcon(wcex.hInstance, (LPCTSTR)IDI_TUTORIAL1); // Icono pequeño de la ventana
-
     // Registra la clase de ventana
     if (!RegisterClassEx(&wcex))
         return E_FAIL;
-
     // Crea la ventana
     RECT rc = { 0, 0, 1500, 840 }; // Tamaño inicial de la ventana
     m_rect = rc;
@@ -58,7 +53,6 @@ HRESULT Window::init(HINSTANCE hInstance, int nCmdShow, WNDPROC wndproc) {
 
     return S_OK;
 }
-
 void Window::update() {
     // Lógica de actualización de la ventana
 }

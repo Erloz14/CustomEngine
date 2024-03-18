@@ -1,43 +1,69 @@
 #pragma once
 #include "Prerequisites.h"
-
-// Clase Device
-// Esta clase encapsula la funcionalidad relacionada con el dispositivo de gráficos.
-class Device {
+// se encarga de crear los 
+class Device
+{
 public:
-    Device() = default; // Constructor predeterminado
-    ~Device() = default; // Destructor predeterminado
+    Device() = default;
+    ~Device() = default;
 
-    // Inicializa el dispositivo de gráficos.
-    void init();
+    void
+        init();
 
-    // Realiza las actualizaciones necesarias del dispositivo de gráficos.
-    void update();
+    void
+        update();
 
-    // Renderiza los objetos en la pantalla utilizando el dispositivo de gráficos.
-    void render();
+    void
+        render();
 
-    // Destruye el dispositivo de gráficos y libera los recursos asociados.
-    void destroy();
+    void
+        destroy();
 
-    // Crea una vista de destino de representación para un recurso.
-    HRESULT CreateRenderTargetView(
-        ID3D11Resource* pResource,
-        const D3D11_RENDER_TARGET_VIEW_DESC* pDesc,
-        ID3D11RenderTargetView** ppRTView);
+    // Funciones para crear diferentes recursos de DirectX
+    HRESULT
+        CreateRenderTargetView(ID3D11Resource* pResource,
+            const D3D11_RENDER_TARGET_VIEW_DESC* pDesc,
+            ID3D11RenderTargetView** ppRTView);
 
-    // Crea un objeto de textura 2D.
-    HRESULT CreateTexture2D(
-        const D3D11_TEXTURE2D_DESC* pDesc,
-        const D3D11_SUBRESOURCE_DATA* pInitialData,
-        ID3D11Texture2D** ppTexture2D);
+    HRESULT
+        CreateTexture2D(const D3D11_TEXTURE2D_DESC* pDesc,
+            const D3D11_SUBRESOURCE_DATA* pInitialData,
+            ID3D11Texture2D** ppTexture2D);
 
-    // Crea una vista de profundidad y de stencil.
-    HRESULT CreateDepthStencilView(
-        ID3D11Resource* pResource,
-        D3D11_DEPTH_STENCIL_VIEW_DESC* pDesc,
-        ID3D11DepthStencilView** ppDepthStencilView);
+    HRESULT
+        CreateDepthStencilView(ID3D11Resource* pResource,
+            const D3D11_DEPTH_STENCIL_VIEW_DESC* pDesc,
+            ID3D11DepthStencilView** ppDepthStencilView);
+
+    HRESULT
+        CreateVertexShader(const void* pShaderBytecode,
+            unsigned int BytecodeLength,
+            ID3D11ClassLinkage* pClassLinkage,
+            ID3D11VertexShader** ppVertexShader);
+    HRESULT
+        CreateInputLayout(const D3D11_INPUT_ELEMENT_DESC* pInputElementDescs,
+            unsigned int NumElements,
+            const void* pShaderBytecodeWithInputSignature,
+            unsigned int BytecodeLength,
+            ID3D11InputLayout** ppInputLayout);
+
+    HRESULT
+        CreatePixelShader(const void* pShaderBytecode,
+            unsigned int BytecodeLength,
+            ID3D11ClassLinkage* pClassLinkage,
+            ID3D11PixelShader** ppPixelShader);
+
+    HRESULT
+        CreateBuffer(const D3D11_BUFFER_DESC* pDesc,
+            const D3D11_SUBRESOURCE_DATA* pInitialData,
+            ID3D11Buffer** ppBuffer);
+
+    HRESULT
+        CreateSamplerState(const D3D11_SAMPLER_DESC* pSamplerDesc,
+            ID3D11SamplerState** ppSamplerState);
+
+
 
 public:
-    ID3D11Device* m_device = nullptr; // Puntero al dispositivo de gráficos
+    ID3D11Device* m_device = nullptr; // Puntero al dispositivo de DirectX
 };
