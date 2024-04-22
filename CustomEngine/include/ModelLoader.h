@@ -1,42 +1,27 @@
-#pragma once
 #include "Prerequisites.h"
-#include "OBJ_Loader.h"
+#pragma once
 
 class ModelLoader
 {
 public:
-	ModelLoader() = default;
-	~ModelLoader();
+    ModelLoader() = default;
+    ~ModelLoader() = default;
 
+    void
+        init();
 
+    void
+        update();
 
+    void
+        render();
 
-	void
-	init();
+    void
+        destroy();
 
-	void
-	update();
-
-	void 
-	render();
-
-	void
-	destroy();
-	
-
-	LoadData
-		Load(std::string objFileName);
-
-
-
-
-
-
-
-
-
+    Mesh
+        Load(std::string objFileName);
 
 private:
-	objl::Loader m_loader;
+    //objl::Loader m_loader;
 };
-

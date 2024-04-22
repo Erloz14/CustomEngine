@@ -65,6 +65,21 @@
     <ClInclude Include="include\ModelLoader.h">
       <Filter>include</Filter>
     </ClInclude>
+    <ClInclude Include="include\OBJ_Loader.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\CCamera.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Commons.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Material.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Model.h">
+      <Filter>include</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CustomEngine.cpp" />
@@ -106,6 +121,21 @@
     </ClCompile>
     <ClCompile Include="src\ModelLoader.cpp">
       <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CCamera.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Material.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Model.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\UserInterface.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="include\Source.cpp">
+      <Filter>include</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
